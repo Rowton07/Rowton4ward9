@@ -24,7 +24,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: "Inter", sans-serif;
-      background: var(--white);
+      background: var(--gray);
       color: var(--navy-deep);
       line-height: 1.6;
     }
@@ -36,7 +36,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: linear-gradient(135deg, #ffffffcc, #ffffffdd);
+      background: #ffffffee;
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(0,0,0,0.08);
     }
@@ -90,10 +90,36 @@
       .nav-toggle { display: block; }
     }
 
+    /* SECTION WRAPPER */
+    section {
+      padding: 4rem 1.5rem;
+    }
+    .section-container {
+      max-width: 1120px;
+      margin: auto;
+    }
+    .section-title {
+      font-family: "Fraunces", serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .section-subtitle {
+      max-width: 600px;
+      margin-bottom: 2rem;
+      color: #333;
+    }
+
+    /* CARD STYLE */
+    .card {
+      background: #fff;
+      padding: 1.8rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
     /* HERO */
     .hero {
       padding: 4rem 1.5rem;
-      background: var(--gray);
     }
     .hero-inner {
       max-width: 1120px;
@@ -129,62 +155,25 @@
     }
     .btn-primary:hover { background: #a00d24; }
 
-    /* SECTIONS */
-    section {
-      padding: 4rem 1.5rem;
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
     }
-    .section-container {
-      max-width: 1120px;
-      margin: auto;
-    }
-    .section-title {
-      font-family: "Fraunces", serif;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    .section-subtitle {
-      max-width: 600px;
-      margin-bottom: 2rem;
-      color: #333;
+    @media (max-width: 900px) {
+      .about-grid { grid-template-columns: 1fr; }
     }
 
-    /* EVENTS */
-    .events-grid {
+    /* PRIORITIES */
+    .priorities-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.5rem;
     }
-    .event-card {
-      background: #fff;
-      padding: 1.4rem;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-    .event-date {
-      font-weight: 700;
-      color: var(--red);
-      margin-bottom: 0.4rem;
-    }
-    .event-title {
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-    }
-    .event-location {
-      font-size: 0.9rem;
-      color: #555;
-    }
-
-    /* FOOTER */
-    footer {
-      background: var(--navy-deep);
-      color: #fff;
-      padding: 2rem 1.5rem;
-      margin-top: 2rem;
-    }
-    .footer-container {
-      max-width: 1120px;
-      margin: auto;
-      font-size: 0.85rem;
+    .priority-card h3 {
+      font-family: "Fraunces", serif;
+      margin-bottom: 0.5rem;
     }
   </style>
 </head>
@@ -203,6 +192,7 @@
       <a href="#priorities">Priorities</a>
       <a href="#plan">Plan</a>
       <a href="#events">Events</a>
+      <a href="#endorsements">Endorsements</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -217,7 +207,7 @@
       <a href="#priorities" class="btn btn-primary">See My Priorities</a>
     </div>
 
-    <div>
+    <div class="card">
       <img src="Copilot_20260420_100757.PNG" alt="Campaign Sign">
     </div>
   </div>
@@ -228,6 +218,27 @@
   <div class="section-container">
     <h2 class="section-title">About Brandon</h2>
     <p class="section-subtitle">A neighbor who knows what’s at stake — and why Ward 9 deserves a school board member who listens.</p>
+
+    <div class="about-grid">
+      <div class="card">
+        <p>
+          I grew up in and around the same schools our students walk into every day. I’ve seen what happens when decisions are made
+          without listening to the people in the classroom or at the kitchen table.
+        </p>
+        <p style="margin-top: 1rem;">
+          Ward 9 deserves a school board member who treats every policy, every budget line, and every bus route like it affects a real family — because it does.
+        </p>
+      </div>
+
+      <div class="card">
+        <p><strong>What shapes my perspective:</strong></p>
+        <ul style="margin-top: 0.8rem; line-height: 1.7;">
+          <li>Grounded in public education and real‑world experience.</li>
+          <li>Committed to listening first — to students, teachers, staff, and parents.</li>
+          <li>Focused on long‑term stability, not short‑term headlines.</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -236,14 +247,56 @@
   <div class="section-container">
     <h2 class="section-title">Priorities</h2>
     <p class="section-subtitle">Clear, practical goals for a stronger school system.</p>
+
+    <div class="priorities-grid">
+      <div class="card priority-card">
+        <h3>Safe, Stable Classrooms</h3>
+        <p>Students can’t learn and teachers can’t teach if the basics aren’t in place. I’ll push for clear safety plans and consistent discipline policies.</p>
+      </div>
+
+      <div class="card priority-card">
+        <h3>Transparent Budgets</h3>
+        <p>Families deserve to know where every dollar goes. I’ll work to make budgets easier to read and easier to question.</p>
+      </div>
+
+      <div class="card priority-card">
+        <h3>Support for Educators</h3>
+        <p>We can’t keep good teachers if we treat them like they’re disposable. I’ll advocate for fair expectations and better communication.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- PLAN -->
+  <!-- PLAN -->
 <section id="plan">
   <div class="section-container">
     <h2 class="section-title">Plan for Ward 9</h2>
     <p class="section-subtitle">A steady, transparent approach to leadership.</p>
+
+    <div class="card" style="margin-bottom: 2rem;">
+      <h3 style="font-family: 'Fraunces', serif; margin-bottom: 0.6rem;">How I’ll approach the work</h3>
+      <p>
+        A school board seat isn’t a microphone — it’s a responsibility. My approach is simple:
+        listen first, ask direct questions, and keep Ward 9 at the center of every decision.
+      </p>
+    </div>
+
+    <div class="priorities-grid">
+      <div class="card">
+        <h3>1. Listen Before Voting</h3>
+        <p>I’ll seek input from Ward 9 families, teachers, and staff — not just central office.</p>
+      </div>
+
+      <div class="card">
+        <h3>2. Ask Hard Questions About Spending</h3>
+        <p>I’ll push for clear explanations of how money moves and how it affects classrooms.</p>
+      </div>
+
+      <div class="card">
+        <h3>3. Keep Communication Open</h3>
+        <p>Families shouldn’t have to dig for basic information. I’ll advocate for clearer updates and better outreach.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -253,55 +306,62 @@
     <h2 class="section-title">Events</h2>
     <p class="section-subtitle">Come meet Brandon and learn more about the vision for Ward 9.</p>
 
-    <div class="events-grid">
-      <div class="event-card">
-        <div class="event-date">April 27, 2026</div>
-        <div class="event-title">Community Meet & Greet</div>
-        <div class="event-location">Jena Town Park Pavilion</div>
+    <div class="priorities-grid">
+      <div class="card">
+        <h3>April 27, 2026</h3>
+        <p><strong>Community Meet & Greet</strong><br>Jena Town Park Pavilion</p>
       </div>
 
-      <div class="event-card">
-        <div class="event-date">May 3, 2026</div>
-        <div class="event-title">Ward 9 Education Roundtable</div>
-        <div class="event-location">Good Pine Middle School</div>
+      <div class="card">
+        <h3>May 3, 2026</h3>
+        <p><strong>Ward 9 Education Roundtable</strong><br>Good Pine Middle School</p>
       </div>
 
-      <div class="event-card">
-        <div class="event-date">May 10, 2026</div>
-        <div class="event-title">Coffee with the Candidate</div>
-        <div class="event-location">LaSalle Parish Library</div>
+      <div class="card">
+        <h3>May 10, 2026</h3>
+        <p><strong>Coffee with the Candidate</strong><br>LaSalle Parish Library</p>
       </div>
     </div>
   </div>
 </section>
-  <!-- ENDORSEMENTS -->
+
+<!-- ENDORSEMENTS -->
 <section id="endorsements">
   <div class="section-container">
     <h2 class="section-title">Endorsements</h2>
-    <p class="section-subtitle">
-      Community voices who support this campaign. Endorsements will appear here as they are announced.
-    </p>
+    <p class="section-subtitle">Community voices who support this campaign. Endorsements will appear here as they are announced.</p>
 
-    <div class="endorsements-grid">
-      <!-- Empty for now — ready for future endorsements -->
-      <div class="endorsement-placeholder">
+    <div class="priorities-grid">
+      <div class="card" style="text-align: center; color: #666;">
         No endorsements have been published yet.
       </div>
     </div>
   </div>
 </section>
 
-
 <!-- CONTACT -->
 <section id="contact">
   <div class="section-container">
     <h2 class="section-title">Contact</h2>
     <p class="section-subtitle">Have a question or concern? Brandon wants to hear from you.</p>
+
+    <div class="card">
+      <p>This contact section can later be connected to a real email form or service.</p>
+
+      <div style="display: grid; gap: 1rem; margin-top: 1rem;">
+        <input type="text" placeholder="Your name" style="padding: 0.7rem; border-radius: 10px; border: 1px solid #ccc;">
+        <input type="email" placeholder="Your email" style="padding: 0.7rem; border-radius: 10px; border: 1px solid #ccc;">
+        <textarea placeholder="Your message" style="padding: 0.7rem; border-radius: 10px; border: 1px solid #ccc; min-height: 120px;"></textarea>
+      </div>
+
+      <button class="btn btn-primary" style="margin-top: 1rem;">Send Message</button>
+    </div>
   </div>
 </section>
 
-<footer>
-  <div class="footer-container">
+<!-- FOOTER -->
+<footer style="background: var(--navy-deep); color: #fff; padding: 2rem 1.5rem; margin-top: 2rem;">
+  <div class="section-container" style="font-size: 0.85rem;">
     Paid for by the Brandon Rowton Campaign for LaSalle Parish School Board, Ward 9.
   </div>
 </footer>
