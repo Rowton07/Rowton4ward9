@@ -212,19 +212,21 @@ body::before {
   transform: translateY(-2px) scale(1.1);
 }
 
-/* BOXED NAV BUTTONS — MATCHING THE RED BUTTON STYLE */
-#navMenu {
-  display: flex;
-  gap: 0.5rem;
-}
-
+/* FINAL OVERRIDE — RED BUTTON NAV */
 #navMenu a {
+  all: unset;
+  display: inline-block;
+
   padding: 0.5rem 1.1rem;
-  background: var(--color-red-flag); /* same red as your button */
+  background: var(--color-red-flag);
   color: var(--color-cream);
   border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
   font-weight: 600;
+  cursor: pointer;
   text-decoration: none;
+
   box-shadow: var(--shadow-soft);
   transition: 0.2s ease;
 }
