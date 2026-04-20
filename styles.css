@@ -83,6 +83,7 @@
 
 .about-photo img {
   width: 100%;
+  max-width: 220px; /* ← adjust this number to make it bigger/smaller */
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-medium);
   position: relative;
