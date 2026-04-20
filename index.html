@@ -222,18 +222,18 @@ nav a:hover { opacity: 1; }
 
     <button class="nav-toggle" id="navToggle">☰</button>
 
-<nav id="navMenu">
-  <a href="#top">Home</a>
-  <a href="#about">About</a>
-  <a href="#priorities">Priorities</a>
-  <a href="#plan">Plan</a>
-  <a href="#events">Events</a>
-  <a href="#endorsements">Endorsements</a>
-  <a href="#contact">Contact</a>
-</nav>
-
+    <nav id="navMenu" class="nav-links">
+      <a href="#top">Home</a>
+      <a href="#about">About</a>
+      <a href="#priorities">Priorities</a>
+      <a href="#plan">Plan</a>
+      <a href="#events">Events</a>
+      <a href="#endorsements">Endorsements</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </div>
 </header>
+
 
 <!-- HERO -->
 <section class="hero" id="top">
@@ -453,14 +453,22 @@ nav a:hover { opacity: 1; }
   });
 </script>
 
-  <script>
+ <script>
   const navToggle = document.getElementById("navToggle");
   const navMenu = document.getElementById("navMenu");
 
   navToggle.addEventListener("click", () => {
     navMenu.classList.toggle("open");
   });
+
+  // Close menu when clicking a link
+  navMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("open");
+    });
+  });
 </script>
+
 
 </body>
 </html>
