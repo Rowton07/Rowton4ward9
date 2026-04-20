@@ -374,20 +374,15 @@
     <h2 class="section-title">Contact</h2>
     <p class="section-subtitle">Have a question or concern? Brandon wants to hear from you.</p>
 
-  <a href="mailto:blrowton@gmail.com?subject=Message from Campaign Website"
-   class="btn btn-primary"
-   style="margin-top: 1rem; display:inline-block; text-align:center;">
-  Send Message
-</a>
+    <a href="mailto:blrowton@gmail.com?subject=Message from Campaign Website"
+       class="btn btn-primary"
+       style="margin-top: 1rem; display:inline-block; text-align:center;">
+      Send Message
+    </a>
+  </div>
+</section>
 
 <!-- FOOTER -->
-
-    <script>
-  const updated = new Date(document.lastModified);
-  document.getElementById("lastUpdated").textContent =
-    "Website last updated: " + updated.toLocaleDateString();
-</script>
-
 <footer style="background: var(--navy-deep); color: #fff; padding: 2rem 1.5rem; margin-top: 2rem;">
   <div class="section-container" 
        style="font-size: 0.85rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
@@ -401,6 +396,12 @@
   </div>
 </footer>
 
+<!-- AUTO‑UPDATE SCRIPT MUST BE AFTER THE FOOTER -->
+<script>
+  const updated = new Date(document.lastModified);
+  document.getElementById("lastUpdated").textContent =
+    "Website last updated: " + updated.toLocaleDateString();
+</script>
 
 <script>
   const navToggle = document.getElementById("navToggle");
