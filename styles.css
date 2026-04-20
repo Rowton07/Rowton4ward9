@@ -59,5 +59,47 @@
     --shadow-soft: 0 4px 12px rgba(0,0,0,0.08);
     --shadow-medium: 0 6px 20px rgba(0,0,0,0.12);
     --shadow-strong: 0 8px 28px rgba(0,0,0,0.18);
+/* HEADER BACKGROUND */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: url('header-bg.jpg') center/cover no-repeat;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  overflow: hidden;
+}
+
+/* White transparent overlay */
+.nav-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.55); /* adjust transparency here */
+  backdrop-filter: blur(4px);
+  z-index: 1;
+}
+
+/* Ensure content sits above overlay */
+.nav-inner {
+  position: relative;
+  z-index: 2;
+}
+
+/* LOGO FIX */
+.nav-logo {
+  height: 38px;   /* adjust size here */
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Keep brand aligned */
+.nav-brand {
+  display: flex;
+  align-items: center;
+}
+
   }
 }
