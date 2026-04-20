@@ -396,12 +396,24 @@
   </div>
 </footer>
 
-<!-- AUTO‑UPDATE SCRIPT MUST BE AFTER THE FOOTER -->
 <script>
   const updated = new Date(document.lastModified);
+
+  const options = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true
+  };
+
+  const formatted = updated.toLocaleString("en-US", options);
+
   document.getElementById("lastUpdated").textContent =
-    "Website last updated: " + updated.toLocaleDateString();
+    "Website last updated: " + formatted;
 </script>
+
 
 <script>
   const navToggle = document.getElementById("navToggle");
