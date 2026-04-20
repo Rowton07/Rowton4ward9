@@ -381,11 +381,26 @@
 </a>
 
 <!-- FOOTER -->
+
+    <script>
+  const updated = new Date(document.lastModified);
+  document.getElementById("lastUpdated").textContent =
+    "Website last updated: " + updated.toLocaleDateString();
+</script>
+
 <footer style="background: var(--navy-deep); color: #fff; padding: 2rem 1.5rem; margin-top: 2rem;">
-  <div class="section-container" style="font-size: 0.85rem;">
-    Made by and Created for Brandon Rowton - LaSalle Parish School Board, Ward 9.
+  <div class="section-container" 
+       style="font-size: 0.85rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+
+    <div>
+      Made by and Created for Brandon Rowton - LaSalle Parish School Board, Ward 9.
+    </div>
+
+    <div id="lastUpdated" style="opacity:0.8;"></div>
+
   </div>
 </footer>
+
 
 <script>
   const navToggle = document.getElementById("navToggle");
