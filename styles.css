@@ -59,6 +59,27 @@
     --shadow-soft: 0 4px 12px rgba(0,0,0,0.08);
     --shadow-medium: 0 6px 20px rgba(0,0,0,0.12);
     --shadow-strong: 0 8px 28px rgba(0,0,0,0.18);
+    /* FULL‑PAGE BACKGROUND IMAGE */
+body {
+  background: url('3186.jpg') center center / cover no-repeat fixed;
+  background-attachment: fixed;
+}
+
+/* DARK OVERLAY FOR READABILITY */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); /* adjust darkness here */
+  z-index: -1;
+}
+
+/* GLASS‑CARD EFFECT FOR ALL CARDS */
+.card {
+  background: #ffffffee; /* slightly transparent white */
+  backdrop-filter: blur(4px);
+}
+
 /* ENDORSEMENTS */
 .endorsements-grid {
   display: grid;
