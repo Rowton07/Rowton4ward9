@@ -35,152 +35,88 @@
     img { max-width: 100%; display: block; }
     a { text-decoration: none; color: inherit; }
 
-   /* HEADER */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: #ffffffee;
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0,0,0,0.08);
-}
-.nav-container {
-  max-width: 1120px;
-  margin: auto;
-  padding: 0.8rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.nav-logo {
-  height: 42px;
-  width: auto;
-  object-fit: contain;
-}
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #ffffffee;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+    .nav-container {
+      max-width: 1120px;
+      margin: auto;
+      padding: 0.8rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-logo {
+      height: 42px;
+      width: auto;
+      object-fit: contain;
+    }
 
-/* GENERIC NAV (still needed for layout) */
-nav {
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-}
-nav a {
-  font-size: 0.95rem;
-  opacity: 0.85;
-  transition: 0.2s;
-}
-nav a:hover { opacity: 1; }
+    /* MOBILE TOGGLE */
+    .nav-toggle {
+      display: none;
+      font-size: 1.6rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
 
-/* MOBILE TOGGLE */
-.nav-toggle {
-  display: none;
-  font-size: 1.6rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
+    /* DESKTOP NAV */
+    .nav-links {
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+    }
 
-/* ⭐ OVERRIDE WITH RED BUTTON NAV STYLE */
-#navMenu {
-  display: none;
-  flex-direction: column;
-  gap: 0.5rem; /* overrides the 1.5rem gap above */
-}
+    /* NAV LINK BUTTONS */
+    .nav-links a {
+      padding: 0.5rem 1.1rem;
+      background: var(--red);
+      color: #fff;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: 0.2s ease;
+      box-shadow: 0 2px 8px rgba(200,16,46,0.2);
+    }
 
-#navMenu a {
-  padding: 0.5rem 1.1rem;
-  background: var(--color-red-flag);
-  color: var(--color-cream);
-  border-radius: var(--radius-md);
-  font-weight: 600;
-  text-decoration: none;
-  opacity: 1; /* override the generic opacity */
-  box-shadow: var(--shadow-soft);
-  transition: 0.2s ease;
-}
+    .nav-links a:hover {
+      background: #a00d24;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(200,16,46,0.3);
+    }
 
-#navMenu a:hover {
-  background: var(--color-red-flag-dark);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-medium);
-}
+    /* MOBILE NAV */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        right: 1rem;
+        left: 1rem;
+        background: #fff;
+        border-radius: 12px;
+        padding: 1rem;
+        box-shadow: var(--shadow);
+        flex-direction: column;
+        gap: 0.5rem;
+        display: none;
+      }
 
-   /* HEADER */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: #ffffffee;
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0,0,0,0.08);
-}
-.nav-container {
-  max-width: 1120px;
-  margin: auto;
-  padding: 0.8rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.nav-logo {
-  height: 42px;
-  width: auto;
-  object-fit: contain;
-}
+      .nav-links.open {
+        display: flex;
+      }
 
-/* DESKTOP NAV */
-.nav-links {
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-}
-
-/* ⭐ RED BUTTON NAV STYLE — INSERTED HERE ⭐ */
-.nav-links a {
-  padding: 0.5rem 1.1rem;
-  background: var(--color-red-flag);
-  color: var(--color-cream);
-  border-radius: var(--radius-md);
-  font-weight: 600;
-  text-decoration: none;
-  opacity: 1;
-  box-shadow: var(--shadow-soft);
-  transition: 0.2s ease;
-}
-
-.nav-links a:hover {
-  background: var(--color-red-flag-dark);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-medium);
-}
-
-/* MOBILE NAV — ALWAYS CLOSED ON PAGE LOAD */
-@media (max-width: 768px) {
-  .nav-links {
-    position: fixed;
-    top: 70px;
-    right: 1rem;
-    left: 1rem;
-    background: #fff;
-    border-radius: 12px;
-    padding: 1rem;
-    box-shadow: var(--shadow);
-    flex-direction: column;
-    gap: 1rem;
-
-    /* Keeps menu closed on load */
-    display: none;
-  }
-
-  /* Opens ONLY when JS adds .open */
-  .nav-links.open {
-    display: flex;
-  }
-
-  .nav-toggle {
-    display: block;
-  }
-}
+      .nav-toggle {
+        display: block;
+      }
+    }
 
     /* SECTION WRAPPER */
     section {
@@ -273,251 +209,245 @@ header {
 <body>
 
   <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" 
-  src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v17.0">
-</script>
+  <script async defer crossorigin="anonymous"
+    src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v17.0">
+  </script>
 
-<header>
-  <div class="nav-container">
-    <img src="Copilot_20260420_100757.png" class="nav-logo" alt="Campaign Sign">
+  <header>
+    <div class="nav-container">
+      <img src="Copilot_20260420_100757.png" class="nav-logo" alt="Campaign Sign">
 
-    <button class="nav-toggle" id="navToggle">☰</button>
+      <button class="nav-toggle" id="navToggle">☰</button>
 
-    <nav id="navMenu" class="nav-links">
-      <a href="#top">Home</a>
-      <a href="#about">About</a>
-      <a href="#priorities">Priorities</a>
-      <a href="#plan">Plan</a>
-      <a href="#events">Events</a>
-      <a href="#endorsements">Endorsements</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
-
-
-<!-- HERO -->
-<section class="hero" id="top">
-  <div class="hero-inner">
-    <div>
-      <h1>Brandon Rowton for Ward 9 School Board</h1>
-      <p>For every student, every teacher, every family — and a school system that actually listens.</p>
-      <a href="#priorities" class="btn btn-primary">See My Priorities</a>
+      <nav id="navMenu" class="nav-links">
+        <a href="#top">Home</a>
+        <a href="#about">About</a>
+        <a href="#priorities">Priorities</a>
+        <a href="#plan">Plan</a>
+        <a href="#events">Events</a>
+        <a href="#endorsements">Endorsements</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <div class="card">
-      <img src="Slide1 (2).PNG" alt="Campaign Sign">
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="section-container">
-    <h2 class="section-title">About Brandon</h2>
-    <p class="section-subtitle">A neighbor who knows what’s at stake — and why Ward 9 deserves a school board member who listens.</p>
-
-    <div class="about-grid">
-      <div class="card">
-        <p>
-          I grew up in and around the same schools our students walk into every day. I’ve seen what happens when decisions are made
-          without listening to the people in the classroom or at the kitchen table.
-        </p>
-        <p style="margin-top: 1rem;">
-          Ward 9 deserves a school board member who treats every policy, every budget line, it affects a real family — because it does.
-        </p>
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div>
+        <h1>Brandon Rowton for Ward 9 School Board</h1>
+        <p>For every student, every teacher, every family — and a school system that actually listens.</p>
+        <a href="#priorities" class="btn btn-primary">See My Priorities</a>
       </div>
 
       <div class="card">
-        <p><strong>What shapes my perspective:</strong></p>
-        <ul style="margin-top: 0.8rem; line-height: 1.7;">
-          <li>Grounded in public education and real‑world experience.</li>
-          <li>Committed to listening to all the parties involved: parents, teachers, students, and staff.</li>
-          <li>Focused on creating a long-term plan and outlook for our school system</li>
-        </ul>
+        <img src="Slide1 (2).PNG" alt="Campaign Sign">
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- PRIORITIES -->
-<section id="priorities">
-  <div class="section-container">
-    <h2 class="section-title">Priorities</h2>
-    <p class="section-subtitle">Prioritizing school saftey and ensuring money isn't wasted fruitlessly.</p>
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-container">
+      <h2 class="section-title">About Brandon</h2>
+      <p class="section-subtitle">A neighbor who knows what's at stake — and why Ward 9 deserves a school board member who listens.</p>
 
-    <div class="priorities-grid">
-      <div class="card priority-card">
-        <h3>Safe, Stable Classrooms</h3>
-        <p>Reforming teacher and student guidelines and regulations. I want to ensure our policies have the input from all parties involved.</p>
-      </div>
+      <div class="about-grid">
+        <div class="card">
+          <p>
+            I grew up in and around the same schools our students walk into every day. I've seen what happens when decisions are made
+            without listening to the people in the classroom or at the kitchen table.
+          </p>
+          <p style="margin-top: 1rem;">
+            Ward 9 deserves a school board member who treats every policy, every budget line, it affects a real family — because it does.
+          </p>
+        </div>
 
-      <div class="card priority-card">
-        <h3>Transparent Budgets</h3>
-        <p>Families deserve to know where every dollar goes. I'll work to ensure our ward knows where its money is going.</p>
-      </div>
-
-      <div class="card priority-card">
-        <h3>Support for Educators</h3>
-        <p>I support reforming our school lunch program. Our students should feel comfortable eating the food they're provided.</p>
+        <div class="card">
+          <p><strong>What shapes my perspective:</strong></p>
+          <ul style="margin-top: 0.8rem; line-height: 1.7;">
+            <li>Grounded in public education and real‑world experience.</li>
+            <li>Committed to listening to all the parties involved: parents, teachers, students, and staff.</li>
+            <li>Focused on creating a long-term plan and outlook for our school system</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- PRIORITIES -->
+  <section id="priorities">
+    <div class="section-container">
+      <h2 class="section-title">Priorities</h2>
+      <p class="section-subtitle">Prioritizing school safety and ensuring money isn't wasted fruitlessly.</p>
+
+      <div class="priorities-grid">
+        <div class="card priority-card">
+          <h3>Safe, Stable Classrooms</h3>
+          <p>Reforming teacher and student guidelines and regulations. I want to ensure our policies have the input from all parties involved.</p>
+        </div>
+
+        <div class="card priority-card">
+          <h3>Transparent Budgets</h3>
+          <p>Families deserve to know where every dollar goes. I'll work to ensure our ward knows where its money is going.</p>
+        </div>
+
+        <div class="card priority-card">
+          <h3>Support for Educators</h3>
+          <p>I support reforming our school lunch program. Our students should feel comfortable eating the food they're provided.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- PLAN -->
-<section id="plan">
-  <div class="section-container">
-    <h2 class="section-title">Plan for Ward 9</h2>
-    <p class="section-subtitle">A steady, transparent approach to leadership.</p>
+  <section id="plan">
+    <div class="section-container">
+      <h2 class="section-title">Plan for Ward 9</h2>
+      <p class="section-subtitle">A steady, transparent approach to leadership.</p>
 
-    <div class="card" style="margin-bottom: 2rem;">
-      <h3 style="font-family: 'Fraunces', serif; margin-bottom: 0.6rem;">How I’ll approach the work</h3>
-      <p>
-        A school board seat isn’t a microphone — it’s a responsibility. My approach is simple:
-        listen first, ask direct questions, and keep Ward 9 at the center of every decision.
-      </p>
-    </div>
-
-    <div class="priorities-grid">
-      <div class="card">
-        <h3>1. Listen Before Voting</h3>
-        <p>I’ll seek input from Ward 9 families, teachers, and staff — not just central office.</p>
+      <div class="card" style="margin-bottom: 2rem;">
+        <h3 style="font-family: 'Fraunces', serif; margin-bottom: 0.6rem;">How I'll approach the work</h3>
+        <p>
+          A school board seat isn't a microphone — it's a responsibility. My approach is simple:
+          listen first, ask direct questions, and keep Ward 9 at the center of every decision.
+        </p>
       </div>
 
-      <div class="card">
-        <h3>2. Ask Hard Questions About Spending</h3>
-        <p>I’ll push for clear explanations of how money moves and how it affects classrooms.</p>
-      </div>
+      <div class="priorities-grid">
+        <div class="card">
+          <h3>1. Listen Before Voting</h3>
+          <p>I'll seek input from Ward 9 families, teachers, and staff — not just central office.</p>
+        </div>
 
-      <div class="card">
-        <h3>3. Keep Communication Open</h3>
-        <p>Families shouldn’t have to dig for basic information. I’ll advocate for clearer updates and better outreach.</p>
-      </div>
-    </div>
-  </div>
-</section>
+        <div class="card">
+          <h3>2. Ask Hard Questions About Spending</h3>
+          <p>I'll push for clear explanations of how money moves and how it affects classrooms.</p>
+        </div>
 
-<section id="twitter">
-  <div class="section-container">
-    <h2 class="section-title">Follow Brandon on X</h2>
-
-    <a class="twitter-timeline"
-       data-width="380"
-       data-height="600"
-       href="https://x.com/rowtonhq">
-       Tweets by @rowtonhq
-    </a>
-
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  </div>
-</section>
-
-
-
-  </div>
-</section>
-  
-
-<!-- EVENTS -->
-<section id="events">
-  <div class="section-container">
-    <h2 class="section-title">Events</h2>
-    <p class="section-subtitle">Come meet Brandon and learn more about the vision for Ward 9.</p>
-
-    <div class="priorities-grid">
-      <div class="card">
-        <h3>TBD</h3>
-        <p><strong>TBD</strong><br>N/A</p>
-      </div>
-
-      <div class="card">
-        <h3>TBD</h3>
-        <p><strong>TBD</strong><br>N/A</p>
-      </div>
-
-      <div class="card">
-        <h3>TBD</h3>
-        <p><strong>TBD</strong><br>N/A</p>
+        <div class="card">
+          <h3>3. Keep Communication Open</h3>
+          <p>Families shouldn't have to dig for basic information. I'll advocate for clearer updates and better outreach.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ENDORSEMENTS -->
-<section id="endorsements">
-  <div class="section-container">
-    <h2 class="section-title">Endorsements</h2>
-    <p class="section-subtitle">Community voices who support this campaign. Endorsements will appear here as they are announced.</p>
+  <!-- TWITTER / X -->
+  <section id="twitter">
+    <div class="section-container">
+      <h2 class="section-title">Follow Brandon on X</h2>
 
-    <div class="priorities-grid">
-      <div class="card" style="text-align: center; color: #666;">
-        No endorsements have been published yet.
+      <a class="twitter-timeline"
+         data-width="380"
+         data-height="600"
+         href="https://x.com/rowtonhq">
+         Tweets by @rowtonhq
+      </a>
+
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+  </section>
+
+  <!-- EVENTS -->
+  <section id="events">
+    <div class="section-container">
+      <h2 class="section-title">Events</h2>
+      <p class="section-subtitle">Come meet Brandon and learn more about the vision for Ward 9.</p>
+
+      <div class="priorities-grid">
+        <div class="card">
+          <h3>TBD</h3>
+          <p><strong>TBD</strong><br>N/A</p>
+        </div>
+
+        <div class="card">
+          <h3>TBD</h3>
+          <p><strong>TBD</strong><br>N/A</p>
+        </div>
+
+        <div class="card">
+          <h3>TBD</h3>
+          <p><strong>TBD</strong><br>N/A</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="section-container">
-    <h2 class="section-title">Contact</h2>
-    <p class="section-subtitle">Have a question or concern? Brandon wants to hear from you.</p>
+  <!-- ENDORSEMENTS -->
+  <section id="endorsements">
+    <div class="section-container">
+      <h2 class="section-title">Endorsements</h2>
+      <p class="section-subtitle">Community voices who support this campaign. Endorsements will appear here as they are announced.</p>
 
-    <a href="mailto:blrowton@gmail.com?subject=Message from Campaign Website"
-       class="btn btn-primary"
-       style="margin-top: 1rem; display:inline-block; text-align:center;">
-      Send Message
-    </a>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer style="background: var(--navy-deep); color: #fff; padding: 2rem 1.5rem; margin-top: 2rem;">
-  <div class="section-container" 
-       style="font-size: 0.85rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
-
-    <div>
-      Made by and Created for Brandon Rowton - LaSalle Parish School Board, Ward 9.
+      <div class="priorities-grid">
+        <div class="card" style="text-align: center; color: #666;">
+          No endorsements have been published yet.
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div id="lastUpdated" style="opacity:0.8;"></div>
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-container">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-subtitle">Have a question or concern? Brandon wants to hear from you.</p>
 
-  </div>
-</footer>
+      <a href="mailto:blrowton@gmail.com?subject=Message from Campaign Website"
+         class="btn btn-primary"
+         style="margin-top: 1rem; display:inline-block; text-align:center;">
+        Send Message
+      </a>
+    </div>
+  </section>
 
-<script>
-  const updated = new Date(document.lastModified);
+  <!-- FOOTER -->
+  <footer style="background: var(--navy-deep); color: #fff; padding: 2rem 1.5rem; margin-top: 2rem;">
+    <div class="section-container"
+         style="font-size: 0.85rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
 
-  const options = {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    hour: "numeric",
-    minute: "2-digit",
-    hour12: true
-  };
+      <div>
+        Made by and Created for Brandon Rowton - LaSalle Parish School Board, Ward 9.
+      </div>
 
-  const formatted = updated.toLocaleString("en-US", options);
+      <div id="lastUpdated" style="opacity:0.8;"></div>
 
-  document.getElementById("lastUpdated").textContent =
-    "Website last updated: " + formatted;
-</script>
+    </div>
+  </footer>
 
-<script>
-  const navToggle = document.getElementById("navToggle");
-  const navMenu = document.getElementById("navMenu");
+  <script>
+    const updated = new Date(document.lastModified);
 
-  navToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("open");
-  });
+    const options = {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true
+    };
 
-  navMenu.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      navMenu.classList.remove("open");
+    const formatted = updated.toLocaleString("en-US", options);
+
+    document.getElementById("lastUpdated").textContent =
+      "Website last updated: " + formatted;
+  </script>
+
+  <script>
+    const navToggle = document.getElementById("navToggle");
+    const navMenu = document.querySelector(".nav-links");
+
+    navToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("open");
     });
-  });
-</script>
+
+    navMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("open");
+      });
+    });
+  </script>
 
 </body>
 </html>
