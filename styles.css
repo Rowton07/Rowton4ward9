@@ -236,8 +236,3 @@ header nav#navMenu a:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-medium);
 }
-
-#navMenu a {
-  background: red !important;
-}
-
