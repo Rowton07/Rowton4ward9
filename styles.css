@@ -193,3 +193,28 @@ body::before {
   color: #666;
   font-size: 0.95rem;
 }
+
+/* SOCIAL MEDIA LINKS IN HEADER */
+.nav-socials {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-left: auto;
+}
+
+.nav-socials a {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  text-decoration: none;
+  padding: 0.35rem 0.55rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-cream-dark);
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-socials a:hover {
+  background: var(--color-navy);
+  color: var(--color-cream);
+}
+
