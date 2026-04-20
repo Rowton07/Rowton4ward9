@@ -62,6 +62,75 @@
   }
 }
 
+.about-brandon {
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.about-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.about-photo {
+  position: relative;
+  flex: 1 1 260px;
+  max-width: 320px;
+}
+
+.about-photo img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-medium);
+  position: relative;
+  z-index: 2;
+}
+
+/* Decorative shapes */
+.shape-circle {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 80px;
+  height: 80px;
+  background: var(--color-gold);
+  border-radius: 50%;
+  opacity: 0.25;
+  z-index: 1;
+}
+
+.shape-square {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 90px;
+  height: 90px;
+  background: var(--color-red-flag);
+  opacity: 0.25;
+  border-radius: var(--radius-md);
+  z-index: 1;
+}
+
+.about-text {
+  flex: 2 1 300px;
+}
+
+.about-text h2 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--color-navy-deep);
+}
+
+.about-text p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+}
+
+
 body {
   font-family: var(--font-body);
   color: var(--color-navy-deep);
