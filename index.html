@@ -34,47 +34,74 @@
     img { max-width: 100%; display: block; }
     a { text-decoration: none; color: inherit; }
 
-    /* HEADER */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: #ffffffee;
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(0,0,0,0.08);
-    }
-    .nav-container {
-      max-width: 1120px;
-      margin: auto;
-      padding: 0.8rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .nav-logo {
-      height: 42px;
-      width: auto;
-      object-fit: contain;
-    }
-    nav {
-      display: flex;
-      gap: 1.5rem;
-      align-items: center;
-    }
-    nav a {
-      font-size: 0.95rem;
-      opacity: 0.85;
-      transition: 0.2s;
-    }
-    nav a:hover { opacity: 1; }
+   /* HEADER */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #ffffffee;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.nav-container {
+  max-width: 1120px;
+  margin: auto;
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-logo {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+}
 
-    .nav-toggle {
-      display: none;
-      font-size: 1.6rem;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
+/* GENERIC NAV (still needed for layout) */
+nav {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+nav a {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  transition: 0.2s;
+}
+nav a:hover { opacity: 1; }
+
+/* MOBILE TOGGLE */
+.nav-toggle {
+  display: none;
+  font-size: 1.6rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ⭐ OVERRIDE WITH RED BUTTON NAV STYLE */
+#navMenu {
+  display: flex;
+  gap: 0.5rem; /* overrides the 1.5rem gap above */
+}
+
+#navMenu a {
+  padding: 0.5rem 1.1rem;
+  background: var(--color-red-flag);
+  color: var(--color-cream);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  text-decoration: none;
+  opacity: 1; /* override the generic opacity */
+  box-shadow: var(--shadow-soft);
+  transition: 0.2s ease;
+}
+
+#navMenu a:hover {
+  background: var(--color-red-flag-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
 
     @media (max-width: 768px) {
       nav {
