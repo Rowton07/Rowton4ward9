@@ -194,7 +194,6 @@ body::before {
   font-size: 0.95rem;
 }
 
-/* SOCIAL MEDIA LINKS IN HEADER */
 .nav-socials {
   display: flex;
   gap: 0.75rem;
@@ -202,19 +201,13 @@ body::before {
   margin-left: auto;
 }
 
-.nav-socials a {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--color-navy);
-  text-decoration: none;
-  padding: 0.35rem 0.55rem;
-  border-radius: var(--radius-sm);
-  background: var(--color-cream-dark);
-  transition: background 0.2s, color 0.2s;
+.nav-socials a img {
+  width: 26px;   /* adjust size here */
+  height: 26px;
+  display: block;
+  transition: transform 0.2s ease;
 }
 
-.nav-socials a:hover {
-  background: var(--color-navy);
-  color: var(--color-cream);
+.nav-socials a:hover img {
+  transform: translateY(-2px) scale(1.1);
 }
-
