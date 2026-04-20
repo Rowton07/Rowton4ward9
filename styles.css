@@ -1,19 +1,5 @@
 @layer theme {
   :root, :host {
-      /* FULL‑PAGE BACKGROUND IMAGE */
-body {
-  background: url('3186.jpg') center center / cover no-repeat fixed;
-  background-attachment: fixed;
-}
-
-/* DARK OVERLAY FOR READABILITY */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45); /* adjust darkness here */
-  z-index: -1;
-}
     /* BRAND COLORS — MATCHING YOUR CAMPAIGN SIGN */
     --color-cream: #F6EFE2;
     --color-cream-dark: #EDE5D3;
@@ -73,19 +59,29 @@ body::before {
     --shadow-soft: 0 4px 12px rgba(0,0,0,0.08);
     --shadow-medium: 0 6px 20px rgba(0,0,0,0.12);
     --shadow-strong: 0 8px 28px rgba(0,0,0,0.18);
+  }
+}
+
+/* FULL‑PAGE BACKGROUND IMAGE */
+body {
+  font-family: var(--font-body);
+  color: var(--color-navy-deep);
+  line-height: 1.6;
+  background: url('3186.jpg') center center / cover no-repeat fixed;
+}
 
 /* DARK OVERLAY FOR READABILITY */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45); /* adjust darkness here */
+  background: rgba(0, 0, 0, 0.45);
   z-index: -1;
 }
 
 /* GLASS‑CARD EFFECT FOR ALL CARDS */
 .card {
-  background: #ffffffee; /* slightly transparent white */
+  background: #ffffffee;
   backdrop-filter: blur(4px);
 }
 
@@ -100,14 +96,14 @@ body::before {
 .endorsement-card {
   background: #fff;
   padding: 1.4rem;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-medium);
 }
 
 .endorsement-name {
   font-weight: 700;
   margin-bottom: 0.3rem;
-  color: var(--navy-deep);
+  color: var(--color-navy-deep);
 }
 
 .endorsement-role {
@@ -125,12 +121,9 @@ body::before {
 .endorsement-placeholder {
   background: #ffffff;
   padding: 1.4rem;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-medium);
   text-align: center;
   color: #666;
   font-size: 0.95rem;
-}
-
-  }
 }
