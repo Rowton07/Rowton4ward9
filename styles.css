@@ -83,7 +83,7 @@
 
 .about-photo img {
   width: 100%;
-  max-width: 220px; /* ← adjust this number to make it bigger/smaller */
+  max-width: 220px;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-medium);
   position: relative;
@@ -202,7 +202,7 @@ body::before {
 }
 
 .nav-socials a img {
-  width: 26px;   /* adjust size here */
+  width: 26px;
   height: 26px;
   display: block;
   transition: transform 0.2s ease;
@@ -210,4 +210,31 @@ body::before {
 
 .nav-socials a:hover img {
   transform: translateY(-2px) scale(1.1);
+}
+
+/* ⭐ NEW — BOXED NAV MENU LINKS */
+#navMenu {
+  display: flex;
+  gap: 0.5rem;
+}
+
+#navMenu a {
+  padding: 0.45rem 1rem;
+  border: 1px solid var(--color-gold);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-cream);
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s ease;
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(6px);
+}
+
+#navMenu a:hover {
+  background: var(--color-gold);
+  color: var(--color-navy-deep);
+  border-color: var(--color-gold);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
 }
