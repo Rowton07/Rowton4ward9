@@ -62,6 +62,7 @@
   }
 }
 
+/* ABOUT BRANDON SECTION */
 .about-brandon {
   padding: 2rem;
   margin-top: 2rem;
@@ -130,29 +131,23 @@
   color: var(--color-text-secondary);
 }
 
-
+/* BODY RESET — WHITE BACKGROUND + CORRECT FONT */
 body {
   font-family: var(--font-body);
   color: var(--color-navy-deep);
   line-height: 1.6;
-  background: #ffffff; /* ← pure white background */
+  background: #ffffff;
 }
 
-}
-
-/* DARK OVERLAY FOR READABILITY */
+/* REMOVE DARK OVERLAY */
 body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  z-index: -1;
+  content: none;
 }
 
-/* GLASS‑CARD EFFECT FOR ALL CARDS */
+/* GLASS‑CARD EFFECT */
 .card {
-  background: #ffffffee;
-  backdrop-filter: blur(4px);
+  background: #ffffff;
+  backdrop-filter: none;
 }
 
 /* ENDORSEMENTS */
