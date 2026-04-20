@@ -62,12 +62,13 @@
   }
 }
 
-/* FULL‑PAGE BACKGROUND IMAGE */
 body {
   font-family: var(--font-body);
   color: var(--color-navy-deep);
   line-height: 1.6;
-  background: url('school board office.png') center center / cover no-repeat fixed;
+  background: #ffffff; /* ← pure white background */
+}
+
 }
 
 /* DARK OVERLAY FOR READABILITY */
