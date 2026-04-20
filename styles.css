@@ -212,8 +212,8 @@ body::before {
   transform: translateY(-2px) scale(1.1);
 }
 
-/* FINAL OVERRIDE — RED BUTTON NAV */
-#navMenu a {
+/* FINAL FORCE-OVERRIDE — RED BUTTON NAV */
+header nav#navMenu a {
   all: unset;
   display: inline-block;
 
@@ -231,7 +231,7 @@ body::before {
   transition: 0.2s ease;
 }
 
-#navMenu a:hover {
+header nav#navMenu a:hover {
   background: var(--color-red-flag-dark);
   transform: translateY(-2px);
   box-shadow: var(--shadow-medium);
