@@ -443,7 +443,6 @@ nav a:hover { opacity: 1; }
     "Website last updated: " + formatted;
 </script>
 
-
 <script>
   const navToggle = document.getElementById("navToggle");
   const navMenu = document.getElementById("navMenu");
@@ -451,24 +450,13 @@ nav a:hover { opacity: 1; }
   navToggle.addEventListener("click", () => {
     navMenu.classList.toggle("open");
   });
-</script>
 
- <script>
-  const navToggle = document.getElementById("navToggle");
-  const navMenu = document.getElementById("navMenu");
-
-  navToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("open");
-  });
-
-  // Close menu when clicking a link
   navMenu.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => {
       navMenu.classList.remove("open");
     });
   });
 </script>
-
 
 </body>
 </html>
