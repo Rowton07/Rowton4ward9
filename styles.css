@@ -287,4 +287,58 @@ header {
   .nav-toggle {
     display: block;
   }
+  /* ABOUT PHOTO */
+.about-grid {
+  grid-template-columns: 1fr 1.4fr; /* give photo column a bit less space */
+}
+.about-photo-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.about-photo-card {
+  position: relative;
+  background: linear-gradient(160deg, var(--navy-deep), #0d3060);
+  border-radius: 20px;
+  border: 2px solid rgba(103,190,217,0.3);
+  padding: 1.5rem 1.5rem 0;
+  overflow: hidden;
+  max-width: 320px;
+  width: 100%;
+}
+.about-photo-card::before {
+  content: '';
+  position: absolute;
+  width: 250px; height: 250px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(103,190,217,0.18) 0%, transparent 70%);
+  bottom: -60px; right: -60px;
+  pointer-events: none;
+}
+.about-photo {
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+.about-photo-badge {
+  position: absolute;
+  bottom: 1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--blue);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  z-index: 2;
+}
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .about-photo-card { max-width: 260px; margin: 0 auto 1.5rem; }
+}
 }
