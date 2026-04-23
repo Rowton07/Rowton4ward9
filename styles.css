@@ -341,4 +341,65 @@ header {
   .about-grid { grid-template-columns: 1fr; }
   .about-photo-card { max-width: 260px; margin: 0 auto 1.5rem; }
 }
+/* DISTRICT SECTION */
+.district-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .district-grid { grid-template-columns: 1fr; }
+}
+
+.district-map-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.district-map-card {
+  position: relative;
+  background: rgba(103,190,217,0.06);
+  border: 1px solid rgba(103,190,217,0.25);
+  border-radius: 24px;
+  padding: 2rem;
+  max-width: 300px;
+  width: 100%;
+  text-align: center;
+  transition: 0.3s ease;
+}
+.district-map-card:hover {
+  border-color: rgba(103,190,217,0.55);
+  background: rgba(103,190,217,0.1);
+  transform: translateY(-4px);
+}
+.district-map-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  background: radial-gradient(ellipse at center, rgba(103,190,217,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.district-map-img {
+  width: 100%;
+  max-width: 220px;
+  margin: 0 auto;
+  filter: brightness(1.1) drop-shadow(0 0 18px rgba(103,190,217,0.35));
+  transition: filter 0.3s ease;
+}
+.district-map-card:hover .district-map-img {
+  filter: brightness(1.2) drop-shadow(0 0 28px rgba(103,190,217,0.55));
+}
+
+.district-map-label {
+  margin-top: 1.2rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--blue);
+  opacity: 0.85;
+}
 }
