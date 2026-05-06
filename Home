@@ -188,7 +188,7 @@
     <nav class="nav-links">
       <a href="#top">Home</a>
       <a href="#about">About</a>
-      <a href="priorities.html">Priorities</a>
+      <a href="priorities">Priorities</a>
       <a href="#plan">Plan</a>
       <a href="#events">Events</a>
       <a href="#endorsements">Endorsements</a>
@@ -205,7 +205,7 @@
       <h1>A School Board That Works for <em>Every</em> Family</h1>
       <p class="hero-sub">Brandon Rowton is running to bring transparency, accountability, and provide a real listening ear to Ward 9 residents.</p>
       <div class="hero-btns">
-        <a href="priorities.html" class="btn btn-primary">See My Priorities</a>
+        <a href="priorities" class="btn btn-primary">See My Priorities</a>
         <a href="#contact" class="btn btn-outline">Get in Touch</a>
       </div>
     </div>
@@ -285,7 +285,7 @@
       </div>
     </div>
     <div class="priorities-cta">
-      <a href="priorities.html" class="btn btn-primary" style="font-size: 1rem; padding: 1rem 2.4rem;">View All 6 Priorities →</a>
+      <a href="priorities" class="btn btn-primary" style="font-size: 1rem; padding: 1rem 2.4rem;">View All 6 Priorities →</a>
     </div>
   </div>
 </section>
