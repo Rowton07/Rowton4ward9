@@ -94,14 +94,14 @@
     <img src="Copilot_20260420_100757.png" class="nav-logo" alt="Campaign Logo">
     <button class="nav-toggle" id="navToggle">☰</button>
     <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="index.html#about">About</a>
-      <a href="priorities.html" class="active">Priorities</a>
-      <a href="index.html#plan">Plan</a>
-      <a href="index.html#events">Events</a>
-      <a href="index.html#endorsements">Endorsements</a>
-      <a href="index.html#press">Press</a>
-      <a href="index.html#contact" class="cta">Contact</a>
+      <a href="Home">Home</a>
+      <a href="Home#about">About</a>
+      <a href="priorities" class="active">Priorities</a>
+      <a href="Home#plan">Plan</a>
+      <a href="Home#events">Events</a>
+      <a href="Home#endorsements">Endorsements</a>
+      <a href="Home#press">Press</a>
+      <a href="Home#contact" class="cta">Contact</a>
     </nav>
   </div>
 </header>
@@ -109,7 +109,7 @@
 <div class="page-hero">
   <div class="page-hero-inner">
     <div class="breadcrumb">
-      <a href="index.html">Home</a>
+      <a href="Home">Home</a>
       <span>/</span>
       <span>Priorities</span>
     </div>
@@ -137,7 +137,7 @@
         </div>
       </a>
 
-      <a href="priority-transparent-budgets.html" class="priority-card-link">
+      <a href="priority-transparent-budgets" class="priority-card-link">
         <div class="priority-card">
           <div class="priority-card-header">
             <div class="priority-icon">💰</div>
@@ -179,7 +179,7 @@
         </div>
       </a>
 
-      <a href="priority-4-day.html" class="priority-card-link">
+      <a href="priority-4-day" class="priority-card-link">
         <div class="priority-card">
           <div class="priority-card-header">
             <div class="priority-icon">👨‍👩‍👧</div>
@@ -214,7 +214,7 @@
 <footer>
   <div class="footer-inner">
     <div>Made by and created for Brandon Rowton — LaSalle Parish School Board, Ward 9.</div>
-    <a href="index.html" style="color: var(--blue); font-weight: 600;">← Back to Home</a>
+    <a href="Home" style="color: var(--blue); font-weight: 600;">← Back to Home</a>
   </div>
 </footer>
 
