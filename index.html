@@ -534,10 +534,10 @@ I am running because I believe Ward 9 deserves a school board member who will fi
       <h2 id="ward9-title">Are you a <em>Ward 9</em> resident?</h2>
       <p>This campaign is focused on Ward 9 of LaSalle Parish. Brandon wants to make sure his message reaches the families and community members he'd represent on the school board.</p>
       <div class="modal-btns">
-        <button class="modal-btn modal-btn-yes" onclick="ward9Respond(true)">Yes, I'm from Ward 9</button>
+        <button class="modal-btn modal-btn-yes" onclick="ward9Respond(true)">Yes, I am a resident of Ward 9</button>
         <button class="modal-btn modal-btn-no" onclick="ward9Respond(false)">No, just browsing</button>
       </div>
-      <p class="modal-footnote">This question is just to help us understand our audience — no data is collected.</p>
+      <p class="modal-footnote">This question is intended to count the number of visits from Ward 9 residents.</p>
     </div>
     <div id="ward9-response">
       <span class="modal-icon" id="ward9-resp-icon"></span>
@@ -564,7 +564,7 @@ I am running because I believe Ward 9 deserves a school board member who will fi
     if (isWard9) {
       document.getElementById('ward9-resp-icon').textContent = '👋';
       document.getElementById('ward9-resp-title').innerHTML = 'Welcome, neighbor!';
-      document.getElementById('ward9-resp-body').textContent = "Great to have you here. Brandon is running to make sure Ward 9 families have a real voice on the school board. Take a look around — and don't hesitate to reach out.";
+      document.getElementById('ward9-resp-body').textContent = "Great to have you here. Brandon is running to make sure Ward 9 families have a real voice on the school board. Take a look around and don't hesitate to reach out.";
     } else {
       document.getElementById('ward9-resp-icon').textContent = '🤝';
       document.getElementById('ward9-resp-title').innerHTML = 'Thanks for stopping by!';
