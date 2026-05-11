@@ -453,5 +453,133 @@ I am running because I believe Ward 9 deserves a school board member who will fi
   navMenu.querySelectorAll("a").forEach(link => link.addEventListener("click", () => navMenu.classList.remove("open")));
 </script>
 
+<!-- WARD 9 POP-UP -->
+<style>
+  #ward9-overlay {
+    position: fixed; inset: 0; z-index: 9999;
+    background: rgba(6, 25, 52, 0.72);
+    backdrop-filter: blur(6px);
+    display: flex; align-items: center; justify-content: center;
+    padding: 1.5rem;
+    opacity: 0; transition: opacity 0.35s ease;
+    pointer-events: none;
+  }
+  #ward9-overlay.visible { opacity: 1; pointer-events: all; }
+  #ward9-modal {
+    background: #fff;
+    border-radius: 24px;
+    padding: 2.8rem 2.5rem 2.4rem;
+    max-width: 460px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.22);
+    transform: translateY(24px); transition: transform 0.35s ease;
+    position: relative;
+  }
+  #ward9-overlay.visible #ward9-modal { transform: translateY(0); }
+  #ward9-modal .modal-icon {
+    font-size: 3rem; margin-bottom: 1rem; display: block;
+    animation: modalBounce 0.6s ease 0.35s both;
+  }
+  @keyframes modalBounce {
+    0% { transform: scale(0.5); opacity: 0; }
+    70% { transform: scale(1.15); }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  #ward9-modal h2 {
+    font-family: "Fraunces", serif;
+    font-size: 1.6rem; color: #061934;
+    line-height: 1.2; margin-bottom: 0.7rem;
+  }
+  #ward9-modal h2 em { font-style: italic; color: #4da8c4; }
+  #ward9-modal p {
+    color: #4a5568; font-size: 0.97rem; line-height: 1.65;
+    margin-bottom: 2rem;
+  }
+  .modal-btns { display: flex; gap: 0.9rem; justify-content: center; flex-wrap: wrap; }
+  .modal-btn {
+    padding: 0.8rem 1.9rem; border-radius: 999px; font-weight: 700;
+    font-size: 0.95rem; cursor: pointer; border: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    font-family: "Inter", sans-serif;
+  }
+  .modal-btn:hover { transform: translateY(-2px); }
+  .modal-btn-yes {
+    background: #67bed9; color: #fff;
+    box-shadow: 0 8px 24px rgba(103,190,217,0.4);
+  }
+  .modal-btn-yes:hover { background: #4da8c4; box-shadow: 0 12px 28px rgba(103,190,217,0.5); }
+  .modal-btn-no { background: #f0f4f8; color: #4a5568; }
+  .modal-btn-no:hover { background: #e2e8f0; }
+  #ward9-modal .modal-footnote {
+    margin-top: 1.4rem; margin-bottom: 0;
+    font-size: 0.78rem; color: #a0aec0;
+  }
+  #ward9-response { display: none; }
+  #ward9-response.show { display: block; }
+  #ward9-question.hide { display: none; }
+  #ward9-response h2 { margin-bottom: 0.6rem; }
+  #ward9-response p { margin-bottom: 1.5rem; }
+  .modal-btn-close {
+    background: #061934; color: #fff;
+    box-shadow: 0 8px 24px rgba(6,25,52,0.2);
+  }
+  .modal-btn-close:hover { background: #0d3060; }
+</style>
+
+<div id="ward9-overlay" role="dialog" aria-modal="true" aria-labelledby="ward9-title">
+  <div id="ward9-modal">
+    <div id="ward9-question">
+      <span class="modal-icon">🏫</span>
+      <h2 id="ward9-title">Are you a <em>Ward 9</em> resident?</h2>
+      <p>This campaign is focused on Ward 9 of LaSalle Parish. Brandon wants to make sure his message reaches the families and community members he'd represent on the school board.</p>
+      <div class="modal-btns">
+        <button class="modal-btn modal-btn-yes" onclick="ward9Respond(true)">Yes, I'm from Ward 9</button>
+        <button class="modal-btn modal-btn-no" onclick="ward9Respond(false)">No, just browsing</button>
+      </div>
+      <p class="modal-footnote">This question is just to help us understand our audience — no data is collected.</p>
+    </div>
+    <div id="ward9-response">
+      <span class="modal-icon" id="ward9-resp-icon"></span>
+      <h2 id="ward9-resp-title"></h2>
+      <p id="ward9-resp-body"></p>
+      <div class="modal-btns">
+        <button class="modal-btn modal-btn-close" onclick="closeWard9Modal()">Let's go →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    if (localStorage.getItem('ward9_answered')) return;
+    const overlay = document.getElementById('ward9-overlay');
+    setTimeout(() => overlay.classList.add('visible'), 400);
+  })();
+
+  function ward9Respond(isWard9) {
+    document.getElementById('ward9-question').classList.add('hide');
+    const resp = document.getElementById('ward9-response');
+    resp.classList.add('show');
+    if (isWard9) {
+      document.getElementById('ward9-resp-icon').textContent = '👋';
+      document.getElementById('ward9-resp-title').innerHTML = 'Welcome, neighbor!';
+      document.getElementById('ward9-resp-body').textContent = "Great to have you here. Brandon is running to make sure Ward 9 families have a real voice on the school board. Take a look around — and don't hesitate to reach out.";
+    } else {
+      document.getElementById('ward9-resp-icon').textContent = '🤝';
+      document.getElementById('ward9-resp-title').innerHTML = 'Thanks for stopping by!';
+      document.getElementById('ward9-resp-body').textContent = "Brandon's campaign is focused on Ward 9 of LaSalle Parish, but everyone is welcome here. Feel free to explore the site and learn more about his vision for local education.";
+    }
+    localStorage.setItem('ward9_answered', '1');
+  }
+
+  function closeWard9Modal() {
+    const overlay = document.getElementById('ward9-overlay');
+    overlay.style.opacity = '0';
+    overlay.style.pointerEvents = 'none';
+    setTimeout(() => overlay.remove(), 350);
+  }
+</script>
+
 </body>
 </html>
