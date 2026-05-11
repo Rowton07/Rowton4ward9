@@ -551,6 +551,10 @@ I am running because I believe Ward 9 deserves a school board member who will fi
 </div>
 
 <script>
+  // Google Analytics event tracking
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
   (function() {
     if (localStorage.getItem('ward9_answered')) return;
     const overlay = document.getElementById('ward9-overlay');
@@ -565,10 +569,12 @@ I am running because I believe Ward 9 deserves a school board member who will fi
       document.getElementById('ward9-resp-icon').textContent = '👋';
       document.getElementById('ward9-resp-title').innerHTML = 'Welcome, neighbor!';
       document.getElementById('ward9-resp-body').textContent = "Great to have you here. Brandon is running to make sure Ward 9 families have a real voice on the school board. Take a look around and don't hesitate to reach out.";
+      gtag('event', 'ward9_response', { response: 'yes' });
     } else {
       document.getElementById('ward9-resp-icon').textContent = '🤝';
-      document.getElementById('ward9-resp-title').innerHTML = 'Thanks for stopping by!';
-      document.getElementById('ward9-resp-body').textContent = "Brandon's campaign is focused on Ward 9 of LaSalle Parish, but everyone is welcome here. Feel free to explore the site and learn more about his vision for local education.";
+      document.getElementById('ward9-resp-title').innerHTML = 'Welcome Brother!';
+      document.getElementById('ward9-resp-body').textContent = "Rowton's campaign is focused on Ward 9 of LaSalle Parish, but everyone is welcome here. Feel free to explore the site and learn more about his vision for local education.";
+      gtag('event', 'ward9_response', { response: 'no' });
     }
     localStorage.setItem('ward9_answered', '1');
   }
@@ -580,6 +586,5 @@ I am running because I believe Ward 9 deserves a school board member who will fi
     setTimeout(() => overlay.remove(), 350);
   }
 </script>
-
 </body>
 </html>
