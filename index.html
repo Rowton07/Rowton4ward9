@@ -262,6 +262,119 @@
   </div>
 </section>
 
+<!-- COUNTDOWN TIMER -->
+<div id="countdown-bar">
+  <div class="countdown-inner">
+    <span class="countdown-label">⏳ Election Day — November 3rd</span>
+    <div class="countdown-blocks">
+      <div class="countdown-block"><span class="countdown-num" id="cd-days">--</span><span class="countdown-unit">Days</span></div>
+      <div class="countdown-sep">:</div>
+      <div class="countdown-block"><span class="countdown-num" id="cd-hours">--</span><span class="countdown-unit">Hours</span></div>
+      <div class="countdown-sep">:</div>
+      <div class="countdown-block"><span class="countdown-num" id="cd-mins">--</span><span class="countdown-unit">Minutes</span></div>
+      <div class="countdown-sep">:</div>
+      <div class="countdown-block"><span class="countdown-num" id="cd-secs">--</span><span class="countdown-unit">Seconds</span></div>
+    </div>
+  </div>
+</div>
+<style>
+  #countdown-bar {
+    background: var(--navy-deep);
+    border-bottom: 3px solid var(--blue);
+    padding: 1rem 1.5rem;
+  }
+  .countdown-inner {
+    max-width: 1120px; margin: auto;
+    display: flex; align-items: center; justify-content: center;
+    gap: 2rem; flex-wrap: wrap;
+  }
+  .countdown-label {
+    color: rgba(255,255,255,0.75);
+    font-size: 0.88rem; font-weight: 600;
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .countdown-blocks {
+    display: flex; align-items: center; gap: 0.4rem;
+  }
+  .countdown-block {
+    display: flex; flex-direction: column; align-items: center;
+    background: rgba(103,190,217,0.12);
+    border: 1px solid rgba(103,190,217,0.25);
+    border-radius: 10px;
+    padding: 0.45rem 0.9rem;
+    min-width: 64px;
+  }
+  .countdown-num {
+    font-family: "Fraunces", serif;
+    font-size: 1.6rem; font-weight: 800;
+    color: var(--blue); line-height: 1;
+    transition: transform 0.15s ease;
+  }
+  .countdown-num.tick { transform: scale(1.15); }
+  .countdown-unit {
+    font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(255,255,255,0.45); margin-top: 0.2rem;
+  }
+  .countdown-sep {
+    font-family: "Fraunces", serif;
+    font-size: 1.4rem; font-weight: 800;
+    color: rgba(103,190,217,0.4);
+    margin-bottom: 1rem;
+  }
+  #countdown-bar.election-day .countdown-label {
+    color: var(--blue); font-size: 1rem;
+  }
+  @media (max-width: 600px) {
+    .countdown-block { min-width: 52px; padding: 0.4rem 0.6rem; }
+    .countdown-num { font-size: 1.3rem; }
+  }
+</style>
+<script>
+  (function() {
+    const electionDay = new Date('2025-11-03T20:00:00');
+    const ids = { d: 'cd-days', h: 'cd-hours', m: 'cd-mins', s: 'cd-secs' };
+
+    function pad(n) { return String(n).padStart(2, '0'); }
+
+    function tick() {
+      const now = new Date();
+      const diff = electionDay - now;
+
+      if (diff <= 0) {
+        document.getElementById('countdown-bar').classList.add('election-day');
+        document.querySelector('.countdown-label').textContent = '🗳️ Today is Election Day! Polls are open 7AM – 8PM';
+        document.querySelector('.countdown-blocks').style.display = 'none';
+        return;
+      }
+
+      const days  = Math.floor(diff / 86400000);
+      const hours = Math.floor((diff % 86400000) / 3600000);
+      const mins  = Math.floor((diff % 3600000) / 60000);
+      const secs  = Math.floor((diff % 60000) / 1000);
+
+      function update(id, val) {
+        const el = document.getElementById(id);
+        if (el.textContent !== pad(val)) {
+          el.textContent = pad(val);
+          el.classList.remove('tick');
+          void el.offsetWidth;
+          el.classList.add('tick');
+          setTimeout(() => el.classList.remove('tick'), 150);
+        }
+      }
+
+      update(ids.d, days);
+      update(ids.h, hours);
+      update(ids.m, mins);
+      update(ids.s, secs);
+    }
+
+    tick();
+    setInterval(tick, 1000);
+  })();
+</script>
+
 <!-- PRIORITIES PREVIEW (replaces old #priorities anchor section) -->
 <section id="priorities-preview">
   <div class="section-container">
